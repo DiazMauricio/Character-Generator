@@ -1,0 +1,247 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-family: "Della Respira", serif;
+}
+body {
+  --color1: #212121;
+  background-color: #fff;
+  transition: all 0.5s;
+  color: var(--color1);
+}
+body.dark {
+  --color1: #dddddd;
+  background-color: #1c1c1c;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  display: flex;
+}
+.gap1 {
+  gap: 0.5em;
+}
+
+/*  ROLL BUTTON*/
+#rollButton {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 2em;
+  right: 2em;
+  width: 8em;
+  height: 8em;
+  background: none;
+  cursor: pointer;
+}
+#rollButton .diamond {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 50% 50%;
+  transition: all 1s;
+}
+#rollButton h3 {
+  position: absolute;
+  color: var(--color1);
+  transition: all 0.3s;
+  font-weight: 100;
+}
+#rollButton .diamond .stk:nth-child(2) {
+  transition: all 1s;
+  transform-origin: 50% 50%;
+}
+/*  */
+#rollButton:disabled .diamond {
+  transform: rotate(135deg);
+}
+#rollButton:disabled h3 {
+  opacity: 0;
+}
+#rollButton:disabled .diamond .stk:nth-child(2) {
+  transform: scale(0.5) rotate(180deg);
+}
+
+/*  */
+#rollButton:hover:enabled .diamond .stk:nth-child(2) {
+  transform: scale(0.8);
+}
+#rollButton .diamond .stk:nth-child(2) {
+  animation: dash 4s infinite linear;
+}
+#rollButton .diamond .stk:nth-child(3) {
+  animation: dash 4s infinite linear;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 92;
+  }
+}
+/*  CIRCLE  */
+.circleContainer {
+  width: 95vh;
+  position: relative;
+  --aceleration: 8;
+}
+
+.stk {
+  stroke: var(--color1);
+}
+.fil {
+  fill: var(--color1);
+}
+
+.circle {
+  animation: rotate 3s infinite linear;
+  transform-origin: 50% 50%;
+  transition: all 0.5s cubic-bezier(0.8, 0, 0, 0.8);
+}
+
+.circle:nth-child(3) {
+  animation-duration: calc(12s * var(--aceleration));
+  animation-direction: reverse;
+}
+.circle:nth-child(4) {
+  animation-duration: calc(16s * var(--aceleration));
+  animation-direction: reverse;
+}
+.circle:nth-child(5) {
+  animation-duration: calc(20s * var(--aceleration));
+  animation-direction: reverse;
+}
+.circle:nth-child(6) {
+  animation-duration: calc(10s * var(--aceleration));
+}
+.circle:nth-child(7) {
+  animation-duration: calc(7s * var(--aceleration));
+}
+.circle:nth-child(8) {
+  animation-duration: calc(6s * var(--aceleration));
+}
+.circle:nth-child(9) {
+  animation-duration: calc(7.5s * var(--aceleration));
+}
+.circle:nth-child(10) {
+  animation-duration: calc(30s * var(--aceleration));
+}
+.circle:nth-child(11) {
+  animation-duration: calc(9s * var(--aceleration));
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*  circle effect*/
+#svgCircle.circleEffect .circle:nth-child(3) {
+  r: 410;
+}
+#svgCircle.circleEffect .circle:nth-child(4) {
+  r: 250;
+}
+#svgCircle.circleEffect .circle:nth-child(5) {
+  r: 430;
+}
+#svgCircle.circleEffect .circle:nth-child(6) {
+  r: 300;
+}
+#svgCircle.circleEffect .circle:nth-child(7) {
+  r: 100;
+}
+#svgCircle.circleEffect .circle:nth-child(8) {
+  r: 210;
+}
+#svgCircle.circleEffect .circle:nth-child(9) {
+  r: 390;
+}
+#svgCircle.circleEffect .circle:nth-child(10) {
+  r: 390;
+}
+/*  INFO  */
+.infoContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#info {
+  width: 55vh;
+  max-height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2.8vmin;
+}
+#info * {
+  font-weight: 100 !important;
+  transition: opacity 0.3s;
+}
+#info *.off {
+  opacity: 0;
+}
+#race {
+  margin-bottom: -0.2em;
+  margin-top: -0.5em;
+}
+#numbers {
+  margin-top: 1em;
+}
+#numbers h3:nth-last-child(n + 2)::after {
+  content: "•";
+  padding-left: 00.5em;
+}
+#class::after {
+  content: "•";
+  padding: 0.2em;
+}
+#age {
+  padding: 0.5em;
+}
+.gender {
+  width: 12em;
+  margin-top: 0.5em;
+}
+#gendermarker {
+  transition: all 0.8s cubic-bezier(0.5, 0.13, 0.52, 1.11);
+  /* transform: translate(7rem); */
+}
+/*  EYE BUTTON */
+.eyeButton {
+  opacity: 0.8;
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+.eyeIcon {
+  width: 3em;
+  cursor: pointer;
+}
+.eyeIcon .eyelid {
+  transition: d 0.5s cubic-bezier(0.6, 0.6, 0.5, 3);
+}
+.dark .eyeIcon .eyelid {
+  transition: d 0.5s cubic-bezier(0.7, -2, 0.6, 0.6);
+}
+.dark .eyeIcon .eyelid:nth-child(2) {
+  d: path("M201.5 92L363 200L201.5 92L40 200L201.5 92Z");
+}
+.dark .eyeIcon .eyelid:nth-child(3) {
+  d: path("M201.5 310L364 200L201.5 310L39 200L201.5 310Z");
+}

@@ -1,0 +1,32 @@
+{
+    "races": [
+        {
+            "name": "Human",
+            "subraces": [
+                "Tethyrianos"
+            ]
+        },
+        {
+            "name": "Elf",
+            "subraces": [
+                "High",
+                "Drow"
+            ]
+        },
+        {
+            "name": "Dwarf",
+            "subraces": []
+        }
+    ],
+    "class": [],
+    "ages": [
+        "Kid",
+        "Teenager",
+        "Young Adult",
+        "Adult",
+        "Middle age",
+        "Veterant",
+        "Old"
+    ]
+    
+}
