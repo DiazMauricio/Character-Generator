@@ -40,7 +40,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10rem;
   width: 8em;
   height: 8em;
   background: none;
@@ -261,9 +260,5 @@ button {
     height: 95vh;
     max-height: calc(95vmin + 12em);
     flex-direction: column;
-  }
-  #rollButton {
-    margin-top: 0rem;
-    margin-left: 20rem;
   }
 }
