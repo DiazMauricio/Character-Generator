@@ -6,14 +6,19 @@
 }
 body {
   --color1: #212121;
-  background-color: #fff;
+  --color1: #1f2b6f;
+  --color2: #212121;
+  background-color: rgb(240, 240, 240);
   transition: all 0.5s;
   color: var(--color1);
 }
 body.dark {
   --color1: #dddddd;
+  --color1: #bd7bdd;
+  --color2: #dddddd;
   background-color: #1c1c1c;
 }
+
 button {
   -webkit-tap-highlight-color: transparent;
 }
@@ -94,7 +99,7 @@ button {
 .circleContainer {
   width: 95vmin;
   position: relative;
-  --aceleration: 8;
+  --aceleration: 4;
 }
 
 .stk {
@@ -107,7 +112,8 @@ button {
 .circle {
   animation: rotate 3s infinite linear;
   transform-origin: 50% 50%;
-  transition: all 0.5s cubic-bezier(0.8, 0, 0, 0.8);
+  transition: all 2.5s ease-in-out;
+  opacity: 0.2;
 }
 
 .circle:nth-child(3) {
@@ -129,7 +135,8 @@ button {
   animation-duration: calc(7s * var(--aceleration));
 }
 .circle:nth-child(8) {
-  animation-duration: calc(6s * var(--aceleration));
+  animation-duration: calc(14s * var(--aceleration));
+  /* stroke: red; */
 }
 .circle:nth-child(9) {
   animation-duration: calc(7.5s * var(--aceleration));
@@ -140,6 +147,12 @@ button {
 .circle:nth-child(11) {
   animation-duration: calc(9s * var(--aceleration));
 }
+.letters {
+  transform: scale(1.015);
+  opacity: 0.5;
+  transform-origin: 50% 50%;
+  transition: all 2s ease-out;
+}
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -149,11 +162,15 @@ button {
   }
 }
 /*  circle effect*/
+#svgCircle.circleEffect .circle {
+  transition: all 0.5s cubic-bezier(0.8, 0, 0, 0.8);
+  opacity: 1;
+}
 #svgCircle.circleEffect .circle:nth-child(3) {
-  r: 410;
+  r: 320;
 }
 #svgCircle.circleEffect .circle:nth-child(4) {
-  r: 250;
+  r: 330;
 }
 #svgCircle.circleEffect .circle:nth-child(5) {
   r: 430;
@@ -162,16 +179,21 @@ button {
   r: 300;
 }
 #svgCircle.circleEffect .circle:nth-child(7) {
-  r: 100;
+  r: 200;
 }
 #svgCircle.circleEffect .circle:nth-child(8) {
-  r: 210;
+  r: 280;
 }
 #svgCircle.circleEffect .circle:nth-child(9) {
   r: 390;
 }
 #svgCircle.circleEffect .circle:nth-child(10) {
   r: 390;
+}
+#svgCircle.circleEffect .letters {
+  opacity: 1;
+  transform: scale(1.05);
+  transition: all 0.3s cubic-bezier(0.8, 0, 0, 0.8);
 }
 /*  INFO  */
 .infoContainer {
@@ -182,6 +204,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--color2);
 }
 #info {
   width: 55vh;
