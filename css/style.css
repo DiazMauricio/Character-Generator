@@ -57,7 +57,7 @@ button {
   width: 100%;
   height: 100%;
   transform-origin: 50% 50%;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 #rollButton h3 {
   position: absolute;
@@ -71,7 +71,8 @@ button {
 }
 /*  */
 #rollButton:disabled .diamond {
-  transform: rotate(135deg);
+  transform: rotate(135deg) scale(0.7);
+  transition: all 1.5s cubic-bezier(0.35, 0.89, 0.48, 0.99);
 }
 #rollButton:disabled h3 {
   opacity: 0;
@@ -153,6 +154,10 @@ button {
   transform-origin: 50% 50%;
   transition: all 2s ease-out;
 }
+.arrows {
+  transform-origin: 50% 50%;
+  transition: all 2s ease-out;
+}
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -194,6 +199,10 @@ button {
   opacity: 1;
   transform: scale(1.05);
   transition: all 0.3s cubic-bezier(0.8, 0, 0, 0.8);
+}
+#svgCircle.circleEffect .arrows {
+  transition: all 0.5s cubic-bezier(0.8, 0, 0, 0.8);
+  transform: scale(1.05);
 }
 /*  INFO  */
 .infoContainer {
@@ -246,7 +255,7 @@ button {
 }
 #gendermarker {
   transition: all 0.8s cubic-bezier(0.5, 0.13, 0.52, 1.11);
-  /* transform: translate(7rem); */
+  transform: translate(6.4rem);
 }
 /*  EYE BUTTON */
 .eyeButton {
